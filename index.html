@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quỹ iPhone bạc của tui</title>
+<style>
+:root{--silver:#858b98;--line:#e1e4e9;--ink:#30343b;--muted:#737985;--bg:#f6f7f9}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#f8f9fb,#eceff3);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);padding:20px}
+.wrap{max-width:520px;margin:0 auto}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 12px 35px #2933440c}
+.top{display:flex;align-items:center;gap:12px}.mark{width:52px;height:52px;border-radius:17px;background:#f0f1f4;display:grid;place-items:center;font-size:27px}.eyebrow{font-size:11px;letter-spacing:1.5px;color:var(--muted);font-weight:750}.sub{font-size:13px;color:var(--muted);margin-top:4px}
+h1{font-size:21px;margin:4px 0 0}.phone-area{display:flex;justify-content:center;align-items:center;padding:24px 0 10px}
+.phone{width:115px;height:180px;border-radius:26px;background:linear-gradient(120deg,#d9dce2,#f8f9fb 40%,#c7cbd2);border:2px solid #b9bec7;box-shadow:inset -4px 0 5px #9ea3ac55,0 9px 20px #30343b18;position:relative;transform:rotate(-7deg)}
+.phone:before{content:"";position:absolute;top:8px;left:8px;width:43px;height:49px;background:linear-gradient(145deg,#d5d8de,#f5f6f8);border:1px solid #aeb3bc;border-radius:13px}
+.lens{position:absolute;width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#8994a7,#303847 65%,#151a22);border:2px solid #a5aab3;z-index:1}
+.l1{top:13px;left:13px}.l2{top:31px;left:14px}.l3{top:14px;left:31px}
+.apple{position:absolute;top:82px;left:47px;font-size:24px;color:#a5aab3}
+.name{text-align:center;font-size:21px;font-weight:800}.spec{text-align:center;font-size:13px;color:var(--muted);margin-top:4px}
+.goal{text-align:center;color:var(--silver);font-size:25px;font-weight:800;margin:14px 0 20px}
+.panel{background:#f5f6f8;border-radius:18px;padding:17px;margin-top:8px}.small{font-size:12px;color:var(--muted)}.balance{font-size:29px;line-height:1.25;font-weight:850;color:var(--silver);margin:6px 0 15px;overflow-wrap:anywhere}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.pct{font-weight:800;color:var(--silver)}.track{height:12px;border-radius:99px;background:#dfe2e7;overflow:hidden;margin:10px 0 14px}.bar{height:100%;width:0;background:linear-gradient(90deg,#aeb4bf,#747b89);border-radius:99px;transition:width .25s}
+.stat{flex:1}.stat strong{display:block;font-size:14px;margin-top:5px;overflow-wrap:anywhere}
+h2{font-size:17px;margin:22px 0 6px}.hint{font-size:13px;color:var(--muted);line-height:1.5;margin:0 0 12px}
+input{width:100%;border:1px solid #d9dde4;border-radius:13px;padding:14px;font:inherit;font-size:16px;outline:none;background:#fff}input:focus{border-color:#8e95a2;box-shadow:0 0 0 3px #858b981a}
+button{width:100%;border:0;border-radius:13px;background:#858b98;color:white;padding:14px;font-size:15px;font-weight:750;margin-top:10px;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.msg{font-size:13px;margin-top:10px;color:#47815d;min-height:18px}
+.history{margin-top:22px;border-top:1px solid var(--line);padding-top:16px}.entry{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #eff0f3;font-size:14px}.entry span{color:var(--muted);font-size:12px}.entry strong{color:var(--silver);white-space:nowrap}
+.foot{text-align:center;color:var(--muted);font-size:12px;line-height:1.5;margin:17px 6px 0}.reset{background:transparent;color:var(--muted);border:1px solid var(--line);font-weight:600;font-size:12px;padding:9px;margin-top:16px}
+@media(max-width:420px){body{padding:12px}.card{padding:17px}.balance{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="wrap"><main class="card">
+ <div class="top"><div class="mark">♡</div><div><div class="eyebrow">SỔ TIẾT KIỆM CỦA TUI</div><h1>Quỹ iPhone màu bạc</h1><div class="sub">Từng khoản nhỏ, gần hơn với em iPhone 🤍</div></div></div>
+ <div class="phone-area" aria-label="Hình minh họa điện thoại màu bạc"><div class="phone"><i class="lens l1"></i><i class="lens l2"></i><i class="lens l3"></i><div class="apple">●</div></div></div>
+ <div class="name">iPhone 17 Pro Max</div><div class="spec">256GB · Màu bạc · Mua thẳng</div><div class="goal">34.000.000đ</div>
+ <section class="panel">
+  <div class="small">SỐ DƯ HIỆN TẠI</div><div class="balance" id="balance">0đ</div>
+  <div class="row"><span class="small">Tiến độ tiết kiệm</span><span class="pct" id="percent">0%</span></div>
+  <div class="track"><div class="bar" id="bar"></div></div>
+  <div class="row"><div class="stat"><div class="small">Đã tiết kiệm</div><strong id="saved">0đ</strong></div><div class="stat" style="text-align:right"><div class="small">Còn thiếu</div><strong id="left">34.000.000đ</strong></div></div>
+ </section>
+ <h2>＋ Bỏ tiền thưởng vào quỹ</h2><p class="hint">Nhập số tiền bà vừa nhận được rồi bấm nút. Số dư sẽ tự lưu trên trình duyệt này để lần sau mở lại vẫn còn.</p>
+ <form id="addForm"><input id="amount" type="number" min="1" step="1" inputmode="numeric" placeholder="Nhập số tiền (VNĐ)" aria-label="Số tiền thưởng" required><button id="addBtn" type="submit">＋ Bỏ tiền vào quỹ</button></form><div class="msg" id="msg" role="status"></div>
+ <section class="history"><div class="row"><h2 style="margin:0">Lịch sử góp quỹ</h2><span class="small" id="count">0 lần góp</span></div><div id="entries"><p class="hint" style="margin-top:12px">Chưa có lần góp nào. Khoản tiền đầu tiên sẽ xuất hiện ở đây!</p></div></section>
+ <p class="foot">Dữ liệu được lưu trên trình duyệt của thiết bị này. Nếu xóa dữ liệu trình duyệt, đổi trình duyệt/thiết bị hoặc mở file ở nơi khác, số dư có thể không đi theo. Bà nên giữ lại bản sao dự phòng nếu đã góp nhiều tiền.</p>
+ <button class="reset" id="export">Tải bản sao lưu số dư (.json)</button>
+</main></div>
+<script>
+const GOAL=34000000, KEY='iphone17promax_silver_savings_v1';
+const fmt=n=>Math.round(n).toLocaleString('vi-VN')+'đ';
+let state={total:0,entries:[]};
+try{const old=JSON.parse(localStorage.getItem(KEY)||'null');if(old&&Number.isFinite(old.total)&&Array.isArray(old.entries))state=old;}catch(e){}
+const $=id=>document.getElementById(id);
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));$('msg').textContent='Đã lưu tự động trên thiết bị này ✓';}catch(e){$('msg').textContent='Không lưu được tự động trên trình duyệt này. Hãy tải bản sao lưu.';}}
+function render(){
+ const total=Math.max(0,Number(state.total)||0),left=Math.max(0,GOAL-total),pct=Math.min(100,total/GOAL*100);
+ $('balance').textContent=fmt(total);$('saved').textContent=fmt(total);$('left').textContent=fmt(left);
+ $('percent').textContent=pct.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';$('bar').style.width=pct+'%';
+ $('count').textContent=state.entries.length+' lần góp';
+ const entries=$('entries');entries.innerHTML='';
+ if(!state.entries.length){entries.innerHTML='<p class="hint" style="margin-top:12px">Chưa có lần góp nào. Khoản tiền đầu tiên sẽ xuất hiện ở đây!</p>';return;}
+ state.entries.slice().reverse().forEach((e,i)=>{const div=document.createElement('div');div.className='entry';const left=document.createElement('div');const label=document.createElement('div');label.textContent='Lần góp thứ '+(state.entries.length-i);const date=document.createElement('span');date.textContent=e.date||'';left.append(label,date);const amount=document.createElement('strong');amount.textContent='+'+fmt(e.amount);div.append(left,amount);entries.append(div);});
+}
+$('addForm').addEventListener('submit',e=>{e.preventDefault();const n=Number($('amount').value);if(!Number.isSafeInteger(n)||n<=0){$('msg').textContent='Bà nhập số tiền hợp lệ lớn hơn 0 nha.';return;}state.total=(Number(state.total)||0)+n;state.entries.push({amount:n,date:new Date().toLocaleString('vi-VN')});persist();render();$('amount').value='';});
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({goal:GOAL,...state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='so-tiet-kiem-iphone-bac-backup.json';a.click();URL.revokeObjectURL(url);$('msg').textContent='Đã tạo bản sao lưu để bà giữ lại.';});
+render();
+</script>
+</body></html>
